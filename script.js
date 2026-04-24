@@ -32,14 +32,14 @@
         id: 5,
         title: 'Police Patrol Monitoring App',
         description: 'UI/UX designed system for monitoring police patrol routes and activities using Figma prototyping.',
-        image: 'images/police.png',
+        image: './images/police.png',
         tech: ['Figma', 'UX Design']
     },
     {
         id: 6,
         title: '3D Unity Shooting Game',
         description: 'Mission-based 3D shooting game built in Unity with interactive gameplay mechanics and level progression.',
-        image: 'images/shooting.png',
+        image: './images/shooting.png',
         tech: ['Unity', 'C#', 'Game Design']
     }
 ];
