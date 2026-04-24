@@ -39,7 +39,7 @@
         id: 6,
         title: '3D Unity Shooting Game',
         description: 'Mission-based 3D shooting game built in Unity with interactive gameplay mechanics and level progression.',
-        image: 'images/phantom.png',
+        image: 'images/Ghost.png',
         tech: ['Unity', 'C#', 'Game Design']
     }
 ];
