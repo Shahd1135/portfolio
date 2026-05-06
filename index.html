@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="./style.css"></head>
+    <link rel="stylesheet" href="./style.css">
+</head>
 <body>
 
 <!-- HEADER -->
@@ -28,13 +29,12 @@
     <div class="intro-container">
 
         <div class="intro-card">
-            <img src="images/Me.JPG" class="profile-img">
+            <img src="images/Me.JPG" class="profile-img" alt="Profile">
             <h2>Shahd Osama</h2>
             <p class="role">Software Developer</p>
         </div>
 
         <div class="intro-text">
-            <h1>Hello</h1>
             <p class="subtitle">Here's who I am & what I do</p>
 
             <div class="intro-buttons">
@@ -51,14 +51,20 @@
     </div>
 </section>
 
-<!-- ABOUT -->
 <section class="philosophy-section" id="about">
     <div class="philosophy-container">
         <h2 class="philosophy-headline">About Me</h2>
 
         <p class="philosophy-subheading">
-            Computer Science graduate passionate about development, problem-solving, and building meaningful applications.
-            I have experience in web development, AI systems, Unity, and databases, and I enjoy turning ideas into real projects.
+            I am a Computer Science graduate specializing in Software Engineering from the University of Wollongong in Dubai (UOWD), where I graduated with distinction.
+
+            During my studies, I deliberately broadened my technical background by taking electives in cybersecurity, game development, big data, and artificial intelligence. These areas strengthened both my problem-solving mindset and my ability to work across different domains of technology.
+
+            For my graduation project, I had the opportunity to collaborate with PwC for nine months. Working alongside industry professionals gave me valuable real-world experience in project development, teamwork, and practical problem solving, and it became one of the most meaningful learning experiences of my academic journey.
+
+            One of my proudest achievements was earning 3rd place at our university’s Innovation Fair, where our team presented our graduation project to judges and experts from the technology industry.
+
+            I am especially passionate about artificial intelligence, game development, and mobile application development. Outside of academic and project work, I actively take online courses and explore new tools to continue expanding my skills and knowledge.
         </p>
     </div>
 </section>
@@ -70,7 +76,7 @@
     <div class="cert-grid">
 
         <div class="cert-card">
-            <img src="images/google.png" alt="Google Certificate">
+            <img src="images/google.png" alt="Google Certificate" onclick="openCert(this.src)">
             <h3>Google Digital Marketing & E-commerce</h3>
             <p>Skills gained:</p>
             <ul>
@@ -81,7 +87,7 @@
         </div>
 
         <div class="cert-card">
-            <img src="images/meta.png" alt="Meta Certificate">
+            <img src="images/meta.png" alt="Meta Certificate" onclick="openCert(this.src)">
             <h3>Meta Android Development</h3>
             <p>Skills gained:</p>
             <ul>
@@ -92,7 +98,7 @@
         </div>
 
         <div class="cert-card">
-            <img src="images/ibm.png" alt="IBM Certificate">
+            <img src="images/ibm.png" alt="IBM Certificate" onclick="openCert(this.src)">
             <h3>IBM Mobile App Development</h3>
             <p>Skills gained:</p>
             <ul>
@@ -103,7 +109,7 @@
         </div>
 
         <div class="cert-card">
-            <img src="images/linkedin.png" alt="LinkedIn Certificate">
+            <img src="images/linkedin.png" alt="LinkedIn Certificate" onclick="openCert(this.src)">
             <h3>AI in Recruitment (LinkedIn)</h3>
             <p>Skills gained:</p>
             <ul>
@@ -114,7 +120,7 @@
         </div>
 
         <div class="cert-card">
-            <img src="images/samsung.jpg" alt="Samsung Internship">
+            <img src="images/samsung.jpg" alt="Samsung Internship" onclick="openCert(this.src)">
             <h3>Samsung Gulf Electronics Internship</h3>
             <p>Skills gained:</p>
             <ul>
@@ -124,9 +130,23 @@
             </ul>
         </div>
 
+        <div class="cert-card">
+            <img src="images/FD.PNG" alt="Mayerfeld Practicum" onclick="openCert(this.src)">
+            <h3>Mayerfeld Practicum Program in the field of Frontend Development</h3>
+            <p>Skills gained:</p>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Team collaboration</li>
+                <li>Real-world workflows</li>
+            </ul>
+        </div>
+
     </div>
 </section>
 
+<!-- PROJECTS -->
 <section class="hero" id="projects">
     <div class="carousel-container">
         <div class="carousel" id="carousel"></div>
@@ -139,6 +159,33 @@
         <div class="carousel-indicators" id="indicators"></div>
     </div>
 </section>
+
+<!-- CERTIFICATE MODAL -->
+<div class="cert-modal" id="certModal">
+    <button class="cert-close" onclick="closeCert()">×</button>
+    <img class="cert-modal-img" id="certModalImg" alt="Certificate Preview">
+</div>
+
+<div class="game-modal" id="gameModal">
+    <div class="game-modal-content">
+        <span class="game-close" id="gameClose">&times;</span>
+
+        <h2>Farm vs. Phantom</h2>
+        <p>
+            Mission-based 3D shooting game built in Unity.
+        </p>
+
+        <div class="game-buttons">
+            <a href="games/Farm vs. Phantom.exe" target="_blank" class="game-btn primary">
+                Play
+            </a>
+
+            <a href="games/Farm vs. Phantom.exe" download class="game-btn secondary">
+                Download
+            </a>
+        </div>
+    </div>
+</div>
 
 <script src="./script.js"></script>
 </body>

@@ -1766,4 +1766,105 @@ a.info-item {
     transform: translateY(-8px);
     transition: 0.3s ease;
 }
+.cert-card img {
+    cursor: pointer;
+}
 
+.cert-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.cert-modal.active {
+    display: flex;
+}
+
+.cert-modal-img {
+    max-width: 95%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.cert-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 40px;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.game-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+    z-index: 9999;
+}
+
+.game-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.game-modal-content {
+    background: white;
+    width: 90%;
+    max-width: 460px;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    position: relative;
+}
+
+.game-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.game-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.game-btn {
+    padding: 12px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.game-btn.primary {
+    background: black;
+    color: white;
+}
+
+.game-btn.secondary {
+    border: 1px solid black;
+    color: black;
+}
+
+.game-btn:hover {
+    transform: translateY(-2px);
+}
