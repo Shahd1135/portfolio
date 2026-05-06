@@ -43,64 +43,6 @@ const portfolioData = [
     }
 ];
 
-const skillsData = [
-    { name: 'React.js', icon: '⚛️', level: 95, category: 'frontend' },
-    { name: 'Node.js', icon: '🟢', level: 90, category: 'backend' },
-    { name: 'TypeScript', icon: '📘', level: 88, category: 'frontend' },
-    { name: 'AWS', icon: '☁️', level: 92, category: 'cloud' },
-    { name: 'Docker', icon: '🐳', level: 85, category: 'cloud' },
-    { name: 'Python', icon: '🐍', level: 93, category: 'backend' },
-    { name: 'Kubernetes', icon: '☸️', level: 82, category: 'cloud' },
-    { name: 'GraphQL', icon: '◈', level: 87, category: 'backend' },
-    { name: 'TensorFlow', icon: '🤖', level: 78, category: 'emerging' },
-    { name: 'Blockchain', icon: '🔗', level: 75, category: 'emerging' },
-    { name: 'Vue.js', icon: '💚', level: 85, category: 'frontend' },
-    { name: 'MongoDB', icon: '🍃', level: 90, category: 'backend' }
-];
-
-// =========================
-// NAVIGATION
-// =========================
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    const header = document.getElementById('header');
-
-    if (section) {
-        const headerHeight = header.offsetHeight;
-        const targetPosition = section.offsetTop - headerHeight;
-
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-        });
-    }
-}
-
-// =========================
-// PARTICLES
-// =========================
-function initParticles() {
-    const particlesContainer = document.getElementById('particles');
-    const particleCount = 15;
-
-    if (!particlesContainer) return;
-
-    for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.top = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 20 + 's';
-        particle.style.animationDuration = (18 + Math.random() * 8) + 's';
-
-        particlesContainer.appendChild(particle);
-    }
-}
-
-// =========================
-// GAME POPUP (NEW)
-// =========================
 const gameModal = document.getElementById('gameModal');
 const gameClose = document.getElementById('gameClose');
 
@@ -122,9 +64,6 @@ if (gameModal) {
     });
 }
 
-// =========================
-// CAROUSEL
-// =========================
 let currentIndex = 0;
 const carousel = document.getElementById('carousel');
 const indicatorsContainer = document.getElementById('indicators');
@@ -153,11 +92,11 @@ function createCarouselItem(data, index) {
 
             <div class="card-tech">${techBadges}</div>
 
-${
-    isGame
-        ? `<button class="card-cta" onclick="openGameModal()">Explore</button>`
-        : `<button class="card-cta" onclick="return false;">Explore</button>`
-}
+            ${
+                isGame
+                    ? `<button class="card-cta" onclick="openGameModal()">Explore</button>`
+                    : `<button class="card-cta">Explore</button>`
+            }
         </div>
     `;
 
@@ -173,6 +112,7 @@ function initCarousel() {
 
         const indicator = document.createElement('div');
         indicator.className = 'indicator';
+
         if (index === 0) indicator.classList.add('active');
 
         indicator.addEventListener('click', () => goToSlide(index));
@@ -195,8 +135,6 @@ function updateCarousel() {
 
         const abs = Math.abs(offset);
         const sign = offset < 0 ? -1 : 1;
-
-        item.style.transition = 'all 0.8s ease';
 
         if (abs === 0) {
             item.style.transform = 'translate(-50%, -50%) scale(1)';
@@ -235,32 +173,6 @@ function goToSlide(index) {
     updateCarousel();
 }
 
-// =========================
-// SKILLS
-// =========================
-function initSkillsGrid() {
-    const grid = document.getElementById('skillsGrid');
-    if (!grid) return;
-
-    grid.innerHTML = '';
-
-    skillsData.forEach(skill => {
-        const div = document.createElement('div');
-        div.className = 'skill-card';
-
-        div.innerHTML = `
-            <div>${skill.icon}</div>
-            <h3>${skill.name}</h3>
-            <p>${skill.level}%</p>
-        `;
-
-        grid.appendChild(div);
-    });
-}
-
-// =========================
-// CERTIFICATE MODAL
-// =========================
 function openCert(src) {
     document.getElementById('certModalImg').src = src;
     document.getElementById('certModal').classList.add('active');
@@ -270,18 +182,10 @@ function closeCert() {
     document.getElementById('certModal').classList.remove('active');
 }
 
-// =========================
-// INIT
-// =========================
 document.addEventListener('DOMContentLoaded', () => {
     initCarousel();
-    initSkillsGrid();
-    initParticles();
 });
 
-// =========================
-// BUTTONS
-// =========================
 document.getElementById('nextBtn')?.addEventListener('click', nextSlide);
 document.getElementById('prevBtn')?.addEventListener('click', prevSlide);
 
